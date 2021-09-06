@@ -78,6 +78,7 @@ app.put('/matriculas/:id', async (req, resp) => {
 
 
 
+// DELETAR MATRICULA
 
 app.delete('/matriculas/:id', async (req, resp) => {
     try {
