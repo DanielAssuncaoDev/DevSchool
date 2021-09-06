@@ -1,0 +1,7 @@
+
+Banco: devschool
+User: root
+Password: 12345
+host: localhost
+
+Modelar DB: npx sequelize-auto -h localhost -d devschool -u root -x 12345 -e mysql -o models -l esm
