@@ -1,34 +1,34 @@
 import _sequelize from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
-export default class tb_matricula extends Model {
+export default class tb_chat extends Model {
   static init(sequelize, DataTypes) {
   super.init({
-    id_matricula: {
+    id_chat: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    nm_aluno: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    nr_chamada: {
+    id_sala: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    nm_curso: {
-      type: DataTypes.STRING(255),
+    id_usuario: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    nm_turma: {
-      type: DataTypes.STRING(255),
+    ds_mensagem: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    dt_mensagem: {
+      type: DataTypes.DATE,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'tb_matricula',
+    tableName: 'tb_chat',
     timestamps: false,
     indexes: [
       {
@@ -36,11 +36,25 @@ export default class tb_matricula extends Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_matricula" },
+          { name: "id_chat" },
+        ]
+      },
+      {
+        name: "id_sala",
+        using: "BTREE",
+        fields: [
+          { name: "id_sala" },
+        ]
+      },
+      {
+        name: "id_usuario",
+        using: "BTREE",
+        fields: [
+          { name: "id_usuario" },
         ]
       },
     ]
   });
-  return tb_matricula;
+  return tb_chat;
   }
 }

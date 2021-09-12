@@ -31,10 +31,10 @@ export const ContainerDevSchool = styled.div`
                 padding: 40px 55px;    
 
 
-                    form {
+                   .Form-CadastrarAluno {
                         display: flex;
                         align-items: flex-end;
-                    } form label {
+                    } .Form-CadastrarAluno label {
                         margin-right: 10px;
                     } 
                     
@@ -174,7 +174,7 @@ export const ContainerDevSchool = styled.div`
                             }
 
                             td {
-                                padding 18px 0;
+                                padding: 18px 0;
                             }
 
                             .Space{

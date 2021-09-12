@@ -1,6 +1,7 @@
 import db from './db.js';
 import express from 'express';
 import cors from 'cors'
+ 
 
 const app = express();
 app.use(cors());
@@ -13,7 +14,7 @@ app.use(express.json());
 
 app.get('/matriculas', async (req, resp) => {
     try {
-        let r = await db.tb_matricula.findAll();
+        let r = await db.tb_matricula.findAll({order: [['id_matricula', 'desc']]});
         resp.send(r);
 
     } catch (e) {
@@ -37,8 +38,18 @@ app.post('/matriculas', async (req, resp) => {
             nm_turma: m.turma 
         };
 
-        let r = await db.tb_matricula.create(inserirMatrucula);
-        resp.sendStatus(200);
+        let alunoRepetido = await db.tb_matricula.findAll({
+            where: { nr_chamada: m.chamada,
+                     nm_turma: m.turma }
+        })
+
+
+        if (alunoRepetido.length != 0) {
+            resp.send({ erro: 'Aluno já cadastrado!' })
+        } else {
+            let r = await db.tb_matricula.create(inserirMatrucula);
+            resp.sendStatus(200);    
+        }        
 
     } catch (e) {
         resp.send({erro: e.toString()});

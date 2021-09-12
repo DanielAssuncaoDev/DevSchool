@@ -1,0 +1,11 @@
+-// Funcionalidades de Listar, Inserir, Alterar e Remover;
+-// Tratamento de Campos obrigatórios na API;
+-// Validação de Chamada positiva na API;
+-// Validação de Aluno repetido na API baseado no número de chamada e turma;
+-// Quando clicar no ícone de editar, trocar nome do botão ‘Cadastrar’ para ‘Alterar’.
+-// Quando clicar no ícone de editar, trocar título do formulário para ‘Alterando Aluno xx’;
+-// Colocar reticências (...) quando nome muito grande. Colocar tooltip (title) com nome completo.
+
+- Confirmar exclusão antes de remover aluno;
+- Toastify para alertas;
+- Top Loading Bar para carregamento;
