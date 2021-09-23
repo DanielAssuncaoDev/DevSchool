@@ -6,8 +6,8 @@ import SvgSair from '../../assets/images/sair.svg';
 
 export default function Cabecalho() {
 
-const [user, setUser] = useState('DandinhoDev');
-const [notificacao, setNotificacao] = useState(3);
+const [user] = useState('DandinhoDev');
+const [notificacao] = useState(3);
 
     return(
             <ContainerCabecalho>
